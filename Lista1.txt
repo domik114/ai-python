@@ -1,0 +1,45 @@
+1. conda info
+2. conda update conda
+3. conda info --envs
+4. conda config --get channels
+5. conda config --add channels conda-forge
+6. conda create --name atena
+7. conda create --name zeus python=3.6
+8. conda activate atena
+9. conda deactivate
+10. conda remove --name atena --all
+11. conda search numpy
+12. conda install numpy
+13. conda install numpy=1.16.2
+14. conda install numpy=1.16.*
+15. conda install 'numpy>=1.16.0,<=1.18.0'
+16. conda install 'numpy==1.16.2|numpy==1.16.6'
+17. pip install numpy==1.16.2 --use-pep517
+18. pip install --force-reinstall numpy==1.16.6
+19. conda list -n nazwa_srodowiska --no-pip --no-conda
+20. conda install numpy=1.16.4 -c conda-forge
+21. conda env export > zeus.yml
+22. conda env create -n platon -f platon.yml
+23. zawartosc demeter.yml
+name: demeter
+channels:
+- conda-forge
+dependencies:
+- python=3.7
+- numpy=1.17.2
+- jupyter
+- opencv=4.6
+- pip:
+- pandas==1.3.5
+
+conda env create -f demeter.yml
+24. conda create --name hades --clone zeus
+25. conda clean --all
+26. conda install jupyter
+jupyter notebook
+
+import sys
+import numpy as np
+
+print("python version: ", sys.version)
+print("numpy version: ", np.__version__)

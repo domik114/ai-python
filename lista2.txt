@@ -1,0 +1,69 @@
+asd = "Imie"
+print(asd*7)
+print((asd+"\n")*5)
+
+print()
+
+# create a list of 10 numbers
+numbers = [5, 12, 7, 18, 20, 2, 15, 9, 11, 3]
+
+# use filter() and lambda function to get numbers greater than 10
+greater_than_10 = list(filter(lambda x: x > 10, numbers))
+
+# print out the numbers greater than 10
+print(greater_than_10)
+
+gr = []
+
+for i in numbers:
+    if i > 10:
+        gr.append(i)
+
+print(gr)
+
+gr = [x for x in numbers if x > 10]
+print(gr)
+
+tab = [x for x in range(50,150)]
+
+print([x for x in tab if x%7==0])
+print([x for x in tab if x%3==0])
+
+slow = {"Polska": "Warszawa", 
+        "Czechy": "Praga", 
+        "Niemcy": "Berlin", 
+        "Anglia": "Londyn",
+        "Francja": "Paryż",
+        "Stany Zjednoczone Ameryki": "Waszyngton",
+        "Włochy": "Rzym",
+        "Słowacja": "Bratysława",
+        "Węgry": "Budapeszt",
+        "Rosja": "Moskwa"
+        }
+
+for i in slow:
+    print(slow[i])
+
+print()
+    
+for i in slow:
+    if slow[i][0] == "A":
+        print(slow[i])
+
+print()
+
+for i in slow:
+    if "e" in slow[i] or "E" in slow[i]:
+        print(slow[i])
+
+print()
+
+print(min(numbers), max(numbers))
+
+import numpy as np
+
+tab4 = np.random.rand(20)
+print(tab4)
+print(tab4.mean(), tab4.max(), tab4.min())
+
+print()

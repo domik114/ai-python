@@ -1,0 +1,37 @@
+b) Data Mendeley to internetowa platforma służąca do udostępniania,
+przechowywania i zarządzania danymi naukowymi. Jest to usługa
+oferowana przez firmę Mendeley, która została założona w 2008 roku i 
+i została przejęta przez wydawnictwo Elsevier w 2013 roku.
+
+c) zbiór danych dotyczy obrazowania wielospektralnego
+liści ziemniaka z zestawem danych pomiarów referencyjnych.
+
+d) autorami zbioru są: Bogdan Ruszczak, Dominika Boguszewska-Mańkowska,
+licencją jest CC BY 4.0, znaczy to, że można kopiować i modyfikować
+zbiór danych dopóki w odpowiedni sposób oznaczy się autorów 
+oraz licencję.
+
+e) formaty danych: .npz, .csv, .html, .geojson, .hdr, .zip
+
+f) rozmiar wynosi 1161MB, ok. 218 plików
+
+g) danę można pobrać z repozytorium za pomocą przyciska nad plikami
+wyszczególnionymi w zbiorze
+
+h) zbióru można użyć do głębokiego uczenia maszynowego w aplikacjach
+rolniczych.
+
+i) numer werjsi, numer DOI, ile osób pobrało zbiór, poprzednia 
+werjsą zbióru
+
+j) na stronie roboflow udało się znaleźć kilka repozytorium
+zdjęć ziemniaków
+
+na stronie kaggle zostały znalezione zbióry tylko o tematyce 
+owoców lub warzyw
+
+na stronie paperswithcode najbardziej zbliżonym wynikiem jest 
+"A Dataset of Multispectral Potato Plants Images"
+
+k) kaggle, UCI Machine Learning Repository, Data.gov, Google Data Search,
+Amazon AWS Public Datasets

@@ -1,0 +1,232 @@
+# 1.1
+print("######## 1 ########")
+from sklearn.datasets import load_diabetes, load_iris, make_classification, make_regression, make_classification
+from sklearn.model_selection import train_test_split
+diabetes = load_diabetes()
+
+# 1.2
+print(diabetes.feature_names)
+
+# 1.3
+num_patients = diabetes.data.shape[0]
+print("Liczba przebadanych pacjentów:", num_patients)
+
+# 1.4
+import matplotlib.pyplot as plt
+plt.hist(diabetes.data[:,0], bins=10)
+plt.xlabel(diabetes.feature_names[0])
+plt.ylabel("Liczba pacjentów")
+plt.show()
+
+# 2
+print("\n######## 2 ########")
+iris = load_iris()
+
+print(f"Nazwy kolumn: {iris.feature_names}")
+print(f"Badane gatunki kwiatków: {iris.target_names}")
+
+target = iris.target
+for i, name in enumerate(iris.target_names):
+    count = (target == i).sum()
+    print(f"Liczba przypadków dla gatunku {name}: {count}")
+
+# 3
+print("\n######## 3 ########")
+
+X, y = make_classification(n_samples=500, n_features=5, n_classes=2, random_state=42)
+print("Wymiary macierzy X:", X.shape)
+print("Wymiary wektora y:", y.shape)
+
+# 4
+print("\n######## 4 ########")
+# X, y = make_classification(n_samples=1000, n_features=10, n_classes=5, random_state=42)
+X, y = make_classification(n_samples=500, n_features=5, n_classes=2, n_clusters_per_class=1, n_informative=3, random_state=42)
+
+print("Wymiary macierzy X:", X.shape)
+print("Wymiary wektora y:", y.shape)
+
+# 5
+print("\n######## 5 ########")
+X, y = make_regression(n_samples=400, n_features=4)
+
+# 6
+print("\n######## 6 ########")
+X, y = make_regression(n_samples=600, n_features=6)
+
+# 7
+print("\n######## 7 ########")
+X_train, X_val, y_train, y_val = train_test_split(diabetes.data, diabetes.target, test_size=0.35, random_state=42)
+print(f"Rozmiar zbioru treningowego: {len(X_train)}")
+print(f"Rozmiar zbioru walidacyjnego: {len(X_val)}")
+
+# 8
+print("\n######## 8 ########")
+X_train, X_val, y_train, y_val = train_test_split(iris.data, iris.target, test_size=0.3, random_state=42)
+print(f"Rozmiar zbioru treningowego: {len(X_train)}")
+print(f"Rozmiar zbioru walidacyjnego: {len(X_val)}")
+
+# 9 
+print("\n######## 9 ########")
+X, y = make_classification(n_samples=500, n_features=5, n_classes=2, random_state=42)
+
+X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.5, stratify=y, random_state=42)
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
+
+ax1.hist(y_train, bins=2, color='blue')
+ax1.set_title('Zbiór treningowy')
+
+ax2.hist(y_val, bins=2, color='red')
+ax2.set_title('Zbiór walidacyjny')
+
+plt.show()
+
+# 10 
+print("\n######## 10 ########")
+
+# 1.1
+print("######## 1 ########")
+from sklearn import datasets
+diabetes = datasets.load_diabetes()
+
+# 1.2
+print(diabetes.feature_names)
+
+# 1.3
+num_patients = diabetes.data.shape[0]
+print("Liczba przebadanych pacjentów:", num_patients)
+
+# 1.4
+import matplotlib.pyplot as plt
+plt.hist(diabetes.data[:,0], bins=10)
+plt.xlabel(diabetes.feature_names[0])
+plt.ylabel("Liczba pacjentów")
+plt.show()
+
+# 2
+print("\n######## 2 ########")
+# załadowanie zbioru danych
+iris = datasets.load_iris()
+
+
+# wypisanie nazw kolumn
+print("Nazwy kolumn: ", iris.feature_names)
+
+# policzenie i wypisanie nazw badanych gatunków kwiatków
+target_names = iris.target_names
+print("Badane gatunki kwiatków: ", target_names)
+
+# policzenie i wypisanie ilości przypadków dla poszczególnych gatunków
+target = iris.target
+for i, name in enumerate(target_names):
+    count = (target == i).sum()
+    print(f"Liczba przypadków dla gatunku {name}: {count}")
+
+# 3
+print("\n######## 3 ########")
+from sklearn.datasets import make_classification
+
+X, y = make_classification(n_samples=500, n_features=5, n_classes=2, random_state=42)
+print("Wymiary macierzy X:", X.shape)
+print("Wymiary wektora y:", y.shape)
+
+# 4
+print("\n######## 4 ########")
+from sklearn.datasets import make_classification
+# X, y = make_classification(n_samples=1000, n_features=10, n_classes=5, random_state=42)
+X, y = make_classification(n_samples=500, n_features=5, n_classes=2, n_clusters_per_class=1, n_informative=3, random_state=42)
+
+print("Wymiary macierzy X:", X.shape)
+print("Wymiary wektora y:", y.shape)
+
+# 5
+print("\n######## 5 ########")
+from sklearn.datasets import make_regression
+
+X, y = make_regression(n_samples=400, n_features=4, noise=0.1)
+print("Wymiary macierzy X:", X.shape)
+print("Wymiary wektora y:", y.shape)
+
+
+# 6
+print("\n######## 6 ########")
+from sklearn.datasets import make_regression
+
+X, y = make_regression(n_samples=600, n_features=6, noise=0.1)
+print("Wymiary macierzy X:", X.shape)
+print("Wymiary wektora y:", y.shape)
+
+# 7
+from sklearn.model_selection import train_test_split
+print("\n######## 7 ########")
+X_train, X_val, y_train, y_val = train_test_split(diabetes.data, diabetes.target, train_size=250, random_state=42)
+print("Liczba pacjentów w zbiorze treningowym: ", len(X_train))
+print("Liczba pacjentów w zbiorze walidacyjnym: ", len(y_val))
+
+# 8 
+print("\n######## 8 ########")
+X_train, X_val, y_train, y_val = train_test_split(iris.data, iris.target, test_size=0.3, random_state=42)
+
+# Wypisanie liczby przypadków w zbiorze treningowym i walidacyjnym
+print("Liczba przypadków w zbiorze treningowym: ", len(X_train))
+print("Liczba przypadków w zbiorze walidacyjnym: ", len(X_val))
+
+# 9 
+import numpy as np
+print("\n######## 9 ########")
+X, y = make_classification(n_samples=500, n_features=5, n_classes=2, random_state=42)
+X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.5, stratify=y, random_state=42)
+
+# Wypisanie liczby przypadków w zbiorze treningowym i walidacyjnym
+print("Liczba przypadków w zbiorze treningowym: ", len(X_train))
+print("Liczba przypadków w zbiorze walidacyjnym: ", len(X_val))
+
+# Wyrysowanie histogramu dla obu klas w zbiorze treningowym i walidacyjnym
+fig, axs = plt.subplots(2, 2, figsize=(10, 8))
+
+for i, ax in enumerate(axs.flatten()):
+    if i == 0:
+        data = y_train
+        title = "Zbiór treningowy - klasa 0"
+    elif i == 1:
+        data = y_val
+        title = "Zbiór walidacyjny - klasa 0"
+    elif i == 2:
+        data = y_train
+        title = "Zbiór treningowy - klasa 1"
+    else:
+        data = y_val
+        title = "Zbiór walidacyjny - klasa 1"
+        
+    counts, bins = np.histogram(data, bins=[-0.5, 0.5, 1.5])
+    ax.bar(bins[:-1], counts, width=0.5, align="center")
+    ax.set_xticks([0, 1])
+    ax.set_xticklabels(["0", "1"])
+    ax.set_title(title)
+    ax.set_xlabel("Klasa")
+    ax.set_ylabel("Liczba przypadków")
+
+plt.tight_layout()
+plt.show()
+
+# 10
+print("\n######## 10 ########")
+X, y = make_regression(n_samples=600, n_features=6, noise=0.1)
+
+X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=100, random_state=42)
+print("Liczba przypadków w zbiorze treningowym: ", len(X_train))
+print("Liczba przypadków w zbiorze walidacyjnym: ", len(X_val))
+
+# histogram zmiennej modelowanej w zbiorze treningowym
+plt.hist(y_train)
+plt.title('Zbiór treningowy')
+plt.xlabel('Wartości zmiennej modelowanej')
+plt.ylabel('Liczba przypadków')
+plt.show()
+
+# histogram zmiennej modelowanej w zbiorze walidacyjnym
+plt.hist(y_val)
+plt.title('Zbiór walidacyjny')
+plt.xlabel('Wartości zmiennej modelowanej')
+plt.ylabel('Liczba przypadków')
+plt.show()
